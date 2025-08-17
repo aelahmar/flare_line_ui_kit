@@ -25,7 +25,7 @@ dependencies:
   flutter_bloc: 8.1.6
   equatable: 2.0.5
   rx_event_bus: 2.0.1
-  logger: 2.2.0
+  logger: 2.6.0
   get_storage: 2.1.1
 
   # Responsive Design - for UI kit components
