@@ -50,10 +50,10 @@ dependencies:
   window_location_href: 1.0.1+2
 
   # Syncfusion Widgets - for UI components
-  syncfusion_flutter_charts: 25.1.35
-  syncfusion_flutter_datagrid: 25.1.35
-  syncfusion_flutter_calendar: 25.1.35
-  syncfusion_flutter_maps: 25.1.35
+  syncfusion_flutter_charts: 27.2.3
+  syncfusion_flutter_datagrid: 27.2.3
+  syncfusion_flutter_calendar: 27.2.3
+  syncfusion_flutter_maps: 27.2.3
 
   # Typography
   google_fonts: 6.2.1
