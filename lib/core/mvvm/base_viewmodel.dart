@@ -1,4 +1,3 @@
-library flareline_uikit;
 import 'dart:async';
 
 import 'package:flareline_uikit/core/event/global_event.dart';
@@ -19,7 +18,6 @@ abstract class BaseViewModel extends ChangeNotifier {
   StreamSubscription? _eventBusFn;
 
   BaseViewModel(BuildContext context) {
-
     if (isRegisterEventBus) {
       _registerEventBus(context);
     }
@@ -27,35 +25,31 @@ abstract class BaseViewModel extends ChangeNotifier {
     init(context);
   }
 
-  void setArgs(Map<String, dynamic>? param){
+  void setArgs(Map<String, dynamic>? param) {
     this.param = param;
   }
 
-  void init(BuildContext context){
+  void init(BuildContext context) {}
 
-  }
-
-  void onViewCreated(BuildContext context){
-
-  }
+  void onViewCreated(BuildContext context) {}
 
   void _registerEventBus(BuildContext context) {
     if (isStickEventBus) {
       _eventBusFn = GlobalEvent.eventBus.onSticky<EventInfo>().listen((event) {
-        if (event != null) {
-          if (_isDisposed) {
-            return;
-          }
+        if (_isDisposed) {
+          return;
+        }
+        if (context.mounted) {
           handleEventBus(context, event);
         }
       });
       return;
     }
     _eventBusFn = GlobalEvent.eventBus.on<EventInfo>().listen((event) {
-      if (event != null) {
-        if (_isDisposed) {
-          return;
-        }
+      if (_isDisposed) {
+        return;
+      }
+      if (context.mounted) {
         handleEventBus(context, event);
       }
     });
@@ -67,9 +61,7 @@ abstract class BaseViewModel extends ChangeNotifier {
     }
   }
 
-  void handleEventBus(BuildContext context, EventInfo eventInfo) {
-
-  }
+  void handleEventBus(BuildContext context, EventInfo eventInfo) {}
 
   @override
   void notifyListeners() {

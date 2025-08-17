@@ -1,13 +1,11 @@
-library flareline_uikit;
-import 'package:rx_event_bus/rx_event_bus.dart';
+import 'package:flareline_uikit/core/event/rx_event_bus.dart';
 
 class GlobalEvent {
-
   // EventBus
   static EventBus eventBus = EventBus();
 }
 
-class EventInfo{
+class EventInfo {
   dynamic obj;
 
   String eventType;
